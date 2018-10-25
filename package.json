@@ -1,0 +1,14 @@
+{
+  "name": "node-scraper",
+  "version": "1.0.0",
+  "description": "Testing web scraping with NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Gavin Ligthart <gavin.ligthart@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.16.4"
+  }
+}
