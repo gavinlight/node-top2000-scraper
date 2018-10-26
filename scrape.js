@@ -1,7 +1,7 @@
 const rp = require('request-promise');
 
 const options = {
-  uri: `https://www.nporadio2.nl/top2000`,
+  uri: 'https://www.iheart.com/playlist/hip-hop-and-rb-top-50-312064750-ViFEMBbVN6YdFceSzi234o/',
   transform: (body) => body,
 };
 
