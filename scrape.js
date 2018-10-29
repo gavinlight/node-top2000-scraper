@@ -2,7 +2,8 @@ const rp = require('request-promise');
 const select = require('cheerio');
 
 const options = {
-  uri: 'https://www.iheart.com/playlist/hip-hop-and-rb-top-50-312064750-ViFEMBbVN6YdFceSzi234o/',
+  uri: `https://www.iheart.com/playlist/hip-hop-and-rb-top-50-312064750-ViFEMBbVN6YdFceSzi234o/` +
+    `?_=${Date.now()}`,
   transform: (body) => body,
 };
 
@@ -15,7 +16,7 @@ const scrape = (req, res) => {
       if (songs && songs.length) {
         songs.each((i, song) => {
           playlist.push({
-            id: i + 1,
+            id: (i + 1),
             song: select('[data-test="song-row-song-title"] a', song).text(),
             album: select('.album-subtitle a', song).text(),
             artist: select('.artist a', song).text(),
@@ -36,7 +37,6 @@ const scrape = (req, res) => {
       }
     })
     .catch((err) => {
-      console.log(err);
       res.json({
         type: 'error',
         data: err,
